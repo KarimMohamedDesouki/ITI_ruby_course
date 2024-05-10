@@ -7,13 +7,6 @@ class Inventory
         AddBook(title,authen,isbn)
     end
 
-    # def loadBook
-    #     if File.exist?(@BOOKS_FILE) #this will be true or false naming convention ?
-    #         File.readlines(@BOOKS_FILE).each do |line|
-    #             @books.push(JSON.parse(line))
-    #         end
-    #     end
-    # end
     def loadBook
         if File.exist?(@books_file)
             File.readlines(@books_file).each do |line|
