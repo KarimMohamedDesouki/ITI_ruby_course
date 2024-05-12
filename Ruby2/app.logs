@@ -1,0 +1,8 @@
+2024-05-12T15:55:10+03:00 -- info -- user Ali transaction value number -30 has Succeeded
+2024-05-12T15:55:10+03:00 -- info -- user Ali transaction value number -50 has Succeeded
+2024-05-12T15:55:10+03:00 -- info -- user Ali transaction value number -100 has Succeeded
+2024-05-12T15:55:10+03:00 -- info -- user Ali transaction value number -100 has Succeeded
+2024-05-12T15:55:10+03:00 -- info -- user Menna transaction value number -100 has Succeeded
+2024-05-12T15:55:52+03:00 -- info -- Processing Transactions User Ali transaction with value -200...
+2024-05-12T15:55:52+03:00 -- warning -- Ali your Balance is 0
+2024-05-12T15:55:52+03:00 -- info -- user Ali transaction value number -200 has Succeeded
