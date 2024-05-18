@@ -5,11 +5,21 @@ Our blog has <%= Article.public_count %> articles and counting!
 <ul>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
-      <li>
+      <button>
         <%= link_to article.title, article %>
-      </li>
+      </button>
     <% end %>
   <% end %>
 </ul>
 
-<%= link_to "New Article", new_article_path %>
+<% if can? :create, Article %>
+  <%= link_to "New Article", new_article_path %>
+  <%= link_to "Sign Out", destroy_user_session_path, data: {
+                    turbo_method: :delete,
+                  } %>
+
+<% else %>
+  <%= link_to "Signin", new_user_session_path%>
+<% end %>
+
+

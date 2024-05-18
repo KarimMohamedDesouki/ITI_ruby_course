@@ -1,14 +1,31 @@
-<h1>ID: <%= @article.id %></h1>
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+
+<% if @article.image.attached? %>
+  <%= image_tag @article.image, width: "300", height: "200" %>
+<% end %>
+
+<ul>
+  <% if can? :update, @article %>
+    <button><%= link_to "Edit", edit_article_path(@article) %></button>
+  <% end %>
+
+  <% if can? :destroy, @article %>
+    <button><%= link_to "Destroy", article_path(@article), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %></button>
+
+  <%else%>
+    <%= link_to "Report", report_article_path(@article), data: {
+      turbo_method: :post,
+      turbo_confirm: "Are you sure?"} %>
+  <% end %>
 
 
-<h1>Title: <%= @article.title %></h1>
-
-<p>Body: <%= @article.body %></p>
-
-<button><%= link_to "Home", articles_path %></button>
-<button><%= link_to "Edit", edit_article_path(@article) %></button>
-<button><%= link_to "Delete", article_path(@article), data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %></button>
-
+  
+</ul>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
